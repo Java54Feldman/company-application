@@ -76,7 +76,7 @@ public class CompanyApplItems {
 			String typeEmpl = empl.getClass().getSimpleName();
 			io.writeString(String.format(
 					"Employee data:\n" + "%s\n" + "id = %d\n" + "basic salary = %d\n" + "department = %s\n", 
-					typeEmpl, id, empl.getBasicSalary(), empl.department));
+					typeEmpl, id, empl.getBasicSalary(), empl.getDepartment()));
 			if (empl instanceof Manager) {
 				io.writeString(String.format("factor = %.2f\n", ((Manager)empl).getFactor()));
 			} else if(empl instanceof WageEmployee || empl instanceof SalesPerson) {
@@ -118,6 +118,8 @@ public class CompanyApplItems {
 			for (Manager manager : managers) {
 				io.writeString(String.format("Manager with id = %d\n", manager.getId()));
 			}
+		} else {
+			io.writeString("No managers in the company");
 		}
 	}
 }
