@@ -27,6 +27,7 @@ public class CompanyAppl {
 						
 					}
 				}, true));
+		companyItems.add(Item.ofExit());
 		Menu menu = new Menu("Company CLI Application",
 				companyItems.toArray(Item[]::new));
 		menu.perform(new SystemInputOutput());
